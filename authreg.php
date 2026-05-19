@@ -152,7 +152,7 @@ if(isset($smsg)) {//success msg
 
 <tr>
 <td>First Name:</td>
-<td><input type="text" name="fn" autocomplete="off" value="<?php if(isset($_POST['fn'])) {echo $_POST['fn'];}?>" ></td>
+<td><input type="text" name="fn" autocomplete="off" value="<?php if(isset($_POST['fn'])) {echo $_POST['fn'];}//here, means if fn is set/crtd ardy, show it ?>" ></td>
 </tr>
 
 <tr>

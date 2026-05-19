@@ -5,10 +5,10 @@ include_once("authheadr.php");
 
 <?php
 
-//here, is to chck/validate if token and email inna db align together
+//here, is to chck/validate if token and email inna db align together wid one stored in db, also fr security purpose
 $rst = $be->prepare("SELECT * FROM users WHERE email=? AND token=?");
-$rst->execute([$_REQUEST['em'], $_REQUEST['token']]);
-$tl = $rst->rowCount();
+$rst->execute([$_REQUEST['em'], $_REQUEST['token']]);//here, $_REQUEST is acting as same $_GETto fetch info of email and token frm url
+$tl = $rst->rowCount();//here, if db table row is counted/chckd and contains rqrd/reqstd data. then..
 if(!$tl){//here means if after rw countng  and no value is found/validated/confirmed or maybe user trying to use  invalid data to access, so user will be rdrctd bk to base url
    header('location:' .BASE_URL. 'authindex.php' );
    exit;
